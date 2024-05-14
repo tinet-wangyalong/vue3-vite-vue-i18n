@@ -32,3 +32,8 @@ const props = defineProps({
 // const { query } = useRoute();
 // console.log(query)
 </script>
+<style lang="scss" scoped>
+.l-size {
+    font-size: $large-size;
+}
+</style>

@@ -7,3 +7,12 @@ vite的常用配置和国际化处理
 1、安装插件
 2、vite.config.js中配置插件
 3、修改tsconfig.json
+
+
+## CSS 预处理器配置
+
+preprocessorOptions: {
+    scss: {
+        additionalData: `@import '/src/assets/style/constant.scss';`
+    }
+}

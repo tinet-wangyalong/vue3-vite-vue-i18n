@@ -26,6 +26,13 @@ export default defineConfig({
             "@": "/src",
         },
     },
+    css: {
+        preprocessorOptions: {
+            scss: {
+                additionalData: `@import '/src/assets/style/constant.scss';`
+            }
+        }
+    },
     plugins: [
         vue(),
         // 自动导入无需代码不停导入
