@@ -30,4 +30,6 @@ resolve: {
 
 ## 拆包策略
 
+## 打包视图分析
+vite-plugin-compression
 

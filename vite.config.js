@@ -3,6 +3,7 @@ import path from 'path'
 import postcssPxToViewport from 'postcss-px-to-viewport'
 import vue from "@vitejs/plugin-vue";   // vue语法支持
 import AutoImport from 'unplugin-auto-import/vite'  // 自动导入
+// import viteCompression from "vite-plugin-compression";
 const postcssPresetEnv = require("postcss-preset-env") 
 const target = "https://www.baidu.cn/"; // test3
 export default defineConfig({
@@ -110,6 +111,14 @@ export default defineConfig({
                 globalsPropValue: true, // Default `true`, (true | false | 'readonly' | 'readable' | 'writable' | 'writeable')
             },
             dts: './auto-imports.d.ts',
-        })
+        }),
+        // viteCompression({
+        //   verbose: true, // 是否在控制台中输出压缩结果
+        //   disable: false,
+        //   threshold: 10240, // 如果体积大于阈值，将被压缩，单位为b，体积过小时请不要压缩，以免适得其反
+        //   algorithm: 'gzip', // 压缩算法，可选['gzip'，' brotliccompress '，'deflate '，'deflateRaw']
+        //   ext: '.gz',
+        //   deleteOriginFile: true // 源文件压缩后是否删除(我为了看压缩后的效果，先选择了true)
+        // }),
     ]
   })
