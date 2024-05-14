@@ -35,3 +35,5 @@ vite-plugin-compression
 
 ## 开发环境配置babel，生产环境配置legacy
 
+## unplugin-vue-components自动导入ui库
+
