@@ -1,6 +1,6 @@
 <template>
 <div style="margin-top: 100px">
-  <div>
+  <div class="l-size">
     {{$t("login.title")}}
     </div>
     <button @click="handleLang('zh_CN')">中文</button>
