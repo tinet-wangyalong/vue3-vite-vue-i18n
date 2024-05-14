@@ -1,0 +1,21 @@
+{
+  "name": "vue-i18n-wyl",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "unplugin-auto-import": "^0.17.6",
+    "vue": "^3.0.4",
+    "axios": "^1.6.2",
+    "pinia": "^2.1.7",
+    "vue-router": "^4.2.5",
+    "vue-i18n": "^9.13.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.5.2",
+    "@vue/compiler-sfc": "^3.0.4",
+    "vite": "^5.0.8"
+  }
+}
