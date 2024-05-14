@@ -7,6 +7,7 @@ import AutoImport from 'unplugin-auto-import/vite'  // 自动导入
 const postcssPresetEnv = require("postcss-preset-env") 
 import legacy from '@vitejs/plugin-legacy'
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
+import Components from "unplugin-vue-components/vite";
 // import babel from '@rollup/plugin-babel';
 const target = "https://www.baidu.cn/"; // test3
 export default defineConfig({
