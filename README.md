@@ -16,3 +16,16 @@ preprocessorOptions: {
         additionalData: `@import '/src/assets/style/constant.scss';`
     }
 }
+
+## 别名
+resolve: {
+    alias: {
+        "@": path.resolve(__dirname, './src') // 路径别名,
+    },
+}
+
+## postcss配置移动端
+
+
+
+

@@ -1,12 +1,14 @@
 import { defineConfig } from 'vite'     // vite工具箱
+import path from 'path'
+import postcssPxToViewport from 'postcss-px-to-viewport'
 import vue from "@vitejs/plugin-vue";   // vue语法支持
 import AutoImport from 'unplugin-auto-import/vite'  // 自动导入
 const target = "https://www.baidu.cn/"; // test3
 export default defineConfig({
     // 配置选项
-    base: "/",
+    base: "/",  // 绝对 URL 路径
     server: {
-        host: "0.0.0.0",
+        host: "0.0.0.0",    // 监听所有地址
         cors: true,
         open: true,
         port: 43210,
@@ -23,7 +25,7 @@ export default defineConfig({
     },
     resolve: {
         alias: {
-            "@": "/src",
+            "@": path.resolve(__dirname, './src') // 路径别名,
         },
     },
     css: {
@@ -31,6 +33,14 @@ export default defineConfig({
             scss: {
                 additionalData: `@import '/src/assets/style/constant.scss';`
             }
+        },
+        postcss: {
+            plugins: [
+                // viewport 布局适配
+                postcssPxToViewport({
+                    viewportWidth: 375
+                })
+            ]
         }
     },
     plugins: [
