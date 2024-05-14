@@ -3,6 +3,7 @@ import path from 'path'
 import postcssPxToViewport from 'postcss-px-to-viewport'
 import vue from "@vitejs/plugin-vue";   // vue语法支持
 import AutoImport from 'unplugin-auto-import/vite'  // 自动导入
+const postcssPresetEnv = require("postcss-preset-env") 
 const target = "https://www.baidu.cn/"; // test3
 export default defineConfig({
     // 配置选项
@@ -39,11 +40,13 @@ export default defineConfig({
         postcss: {
             plugins: [
                 // viewport 布局适配
-                postcssPxToViewport({
-                    viewportWidth: 375
-                })
+                // postcssPxToViewport({
+                //     viewportWidth: 375
+                // }),
+                postcssPresetEnv()
             ]
-        }
+        },
+        // devSourcemap:true    // css的映射
     },
     build: {
         outDir: 'build', // 打包文件的输出目录
