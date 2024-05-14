@@ -41,7 +41,8 @@ export default defineConfig({
                 // 插件预设支持导入的api
                 'vue',
                 'vue-router',
-                'pinia'
+                'pinia',
+                'vue-i18n'
                 // 自定义导入的api
             ],
             eslintrc: {
