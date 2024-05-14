@@ -26,6 +26,8 @@ resolve: {
 
 ## postcss配置移动端
 
+## resolve.extensions
 
+## 拆包策略
 
 
