@@ -6,6 +6,9 @@
     "build": "vite build"
   },
   "dependencies": {
+    "@babel/preset-env": "^7.24.5",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@vitejs/plugin-legacy": "^5.4.0",
     "autoprefixer": "^10.4.19",
     "axios": "^1.6.2",
     "pinia": "^2.1.7",

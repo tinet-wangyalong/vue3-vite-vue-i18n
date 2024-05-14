@@ -1,10 +1,12 @@
 import { defineConfig } from 'vite'     // vite工具箱
 import path from 'path'
-import postcssPxToViewport from 'postcss-px-to-viewport'
+// import postcssPxToViewport from 'postcss-px-to-viewport'
 import vue from "@vitejs/plugin-vue";   // vue语法支持
 import AutoImport from 'unplugin-auto-import/vite'  // 自动导入
 // import viteCompression from "vite-plugin-compression";
 const postcssPresetEnv = require("postcss-preset-env") 
+import legacy from '@vitejs/plugin-legacy'
+// import babel from '@rollup/plugin-babel';
 const target = "https://www.baidu.cn/"; // test3
 export default defineConfig({
     // 配置选项
@@ -87,6 +89,10 @@ export default defineConfig({
     //     force: true // 强制进行依赖预构建
     // },
     plugins: [
+        legacy({
+            targets: ['chrome < 60', 'edge < 15'],
+            renderLegacyChunks: true,
+        }),
         vue(),
         // 自动导入无需代码不停导入
         AutoImport({
@@ -112,6 +118,27 @@ export default defineConfig({
             },
             dts: './auto-imports.d.ts',
         }),
+        // {
+        //     ...babel({
+        //         include: [/\.vue$/, /\.ts$/, /\.tsx$/, /\.jsx$/, /\.js$/],
+        //         extensions: ['.vue', '.ts', '.js', '.tsx', '.jsx'],
+        //         presets: [
+        //         [
+        //             '@babel/preset-env',
+        //             {
+        //             useBuiltIns: 'usage',
+        //             corejs: 3,
+        //             targets: {
+        //                 chrome: '72',
+        //             },
+        //             modules: false,
+        //             },
+        //         ],
+        //         ],
+        //     }),
+        //     // 只在开发环境下生效
+        //     apply: 'serve',
+        // },
         // viteCompression({
         //   verbose: true, // 是否在控制台中输出压缩结果
         //   disable: false,

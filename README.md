@@ -33,3 +33,5 @@ resolve: {
 ## 打包视图分析
 vite-plugin-compression
 
+## 开发环境配置babel，生产环境配置legacy
+
