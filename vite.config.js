@@ -13,9 +13,9 @@ import Components from "unplugin-vue-components/vite";
 import vueSetupExtend from "vite-plugin-vue-setup-extend";
 import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 export default defineConfig(({mode}) => {
-    const outDirPrefix = mode === "production" ? `../../dist/static` : `../../dist/static_dev`;
-    console.log(mode)
+    const outDirPrefix = mode === "production" ? `./dist/static` : `./dist/static_dev`;
     const env = loadEnv(mode, process.cwd() + "/env");  // 环境变量
+    console.log(`${outDirPrefix}${env.VITE_APP_OUTDIR_PREFIX}`)
     console.log(env)
     return {
         // 配置选项
@@ -78,7 +78,7 @@ export default defineConfig(({mode}) => {
                         regex: /^_/ // 仅混淆以 _ 开头的属性名
                     }
                 },
-                oplevel: true // 启用顶级变量和函数名的混淆
+                // oplevel: true // 启用顶级变量和函数名的混淆
             },
             outDir: `${outDirPrefix}${env.VITE_APP_OUTDIR_PREFIX}`, // 打包文件的输出目录
             assetsInlineLimit: "4096", // 小于此阈值的导入或引用资源将内联为 base64 编码
