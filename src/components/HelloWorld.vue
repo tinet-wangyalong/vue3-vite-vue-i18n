@@ -12,6 +12,9 @@
 
 <script setup>
   const { t, locale } = useI18n();
+  const all = reactive({
+    a: 111
+  })
   console.log(locale)
   console.log(t('login.title'), '===')
 
