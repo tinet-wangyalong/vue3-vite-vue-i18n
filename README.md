@@ -3,7 +3,7 @@ vite的常用配置和国际化处理
 
 # vite配置
 
-## CSS 预处理器配置
+# CSS 预处理器配置
 
 preprocessorOptions: {
     scss: {
@@ -11,18 +11,16 @@ preprocessorOptions: {
     }
 }
 
-## 别名
+# 别名
 resolve: {
     alias: {
         "@": path.resolve(__dirname, './src') // 路径别名,
     },
 }
 
-## postcss配置移动端
+# postcss配置移动端
 
-## resolve.extensions
-
-## 拆包策略
+# resolve.extensions
 
 # 插件
 ## vite-plugin-vue-setup-extend
@@ -116,7 +114,9 @@ esbuild：使用 esbuild 进行代码压缩。
 
 2、terserOptions
 当使用 Vite 配置 build.minify 为 terser 时，可以通过 terserOptions 来进一步配置 Terser 的行为。Terser 是一个高度可配置的 JavaScript 压缩工具，支持多种压缩和优化选项。
-`ompress：配置压缩选项。`
+
+`ompress：配置压缩选项。：`
+
 drop_console: 删除所有 console 语句，默认值为 false。
 drop_debugger: 删除所有 debugger 语句，默认值为 true。
 pure_funcs: 指定不影响结果的函数列表，Terser 会直接删除这些函数调用。
@@ -130,3 +130,6 @@ properties: 配置对象属性的混淆。
 toplevel：启用顶级变量和函数名的混淆，默认值为 false。
 3、rollupOptions
 分包设置
+
+# define定义全局变量
+`__INTLIFY_PROD_DEVTOOLS__：Vue I18n（国际化库）相关的全局常量；可以在线上删除国际化插件不必要的包`
